@@ -1,0 +1,5 @@
+{
+  "name": "StreakFlow Habit Tracker",
+  "description": "A high-performance, responsive habit tracking application with a clean dark theme, monthly calendar view, streak calculations, and persistent storage.",
+  "requestFramePermissions": []
+}
