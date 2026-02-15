@@ -16,11 +16,18 @@ const HabitForm: React.FC<HabitFormProps> = ({ onAdd }) => {
     e.preventDefault();
     if (!name.trim()) return;
 
-    onAdd(name.trim(), {
-      type: freqType,
-      value: freqType === 'weekly' ? weeklyValue : undefined,
-      days: freqType === 'custom' ? customDays : undefined
-    });
+   const frequency: any = { type: freqType };
+
+  if (freqType === 'weekly') {
+    frequency.value = weeklyValue;
+  }
+
+  if (freqType === 'custom') {
+    frequency.days = customDays;
+  }
+
+  onAdd(name.trim(), frequency);
+
     setName('');
   };
 
